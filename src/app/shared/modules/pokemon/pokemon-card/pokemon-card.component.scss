@@ -1,0 +1,16 @@
+.pokemon-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+ion-img, .avatar-skeleton {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+ion-skeleton-text {
+  --border-radius: 9999px;
+  --background: rgba(255, 255, 255, 0.065);
+  --background-rgb: 255, 255, 255;
+}

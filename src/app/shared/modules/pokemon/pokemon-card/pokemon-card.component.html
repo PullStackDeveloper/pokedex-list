@@ -1,0 +1,58 @@
+
+<ng-container *ngIf="pokemon; else loadingDetails">
+  <div class="pokemon-image-container">
+    <ion-img
+      *ngIf="pokemon.sprites?.front_default && pokemon.sprites !== undefined"
+      [src]="pokemon.sprites.front_default"
+      alt="{{ pokemon.name }}"
+    ></ion-img>
+  </div>
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>#{{ pokemon.id }} - {{ pokemon.name | titlecase }}</ion-card-title>
+      <ion-chip *ngFor="let type of pokemon.types">
+        <ion-label>{{ type.type.name | titlecase }}</ion-label>
+      </ion-chip>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngIf="pokemon.stats?.length">
+    <ion-card-header><ion-card-title>Stats</ion-card-title></ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let stat of pokemon.stats">
+          <ion-label>{{ stat.stat.name | uppercase }}</ion-label>
+          <ion-badge slot="end">{{ stat.base_stat }}</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pokemon.abilities?.length">
+    <ion-card-header><ion-card-title>Abilities</ion-card-title></ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let ability of pokemon.abilities">
+          <ion-label>{{ ability.ability.name | titlecase }}</ion-label>
+          <ion-note slot="end" *ngIf="ability.is_hidden">Hidden</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pokemon.moves?.length">
+    <ion-card-header><ion-card-title>Moves</ion-card-title></ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let move of pokemon.moves">
+          <ion-label>{{ move.move.name | titlecase }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+
+<ng-template #loadingDetails>
+  <ion-card><ion-card-header>Loading...</ion-card-header></ion-card>
+</ng-template>

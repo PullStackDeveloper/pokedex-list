@@ -1,0 +1,10 @@
+<app-pokedex-header title="Pokedex List"></app-pokedex-header>
+
+<ion-content [fullscreen]="true">
+  <app-pokemon-list
+    [pokemons]="filteredPokemons$ | async"
+    (loadMore)="loadMorePokemons()"
+    (selectPokemon)="openPokemonDetail($event)"
+    (searchChange)="onSearchChange($event)"
+  ></app-pokemon-list>
+</ion-content>

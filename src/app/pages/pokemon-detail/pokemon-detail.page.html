@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pokemon-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (pokemon$ | async)?.name | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-pokemon-card
+    [pokemon]="pokemon$ | async"
+    [loading]="loading$ | async"
+  ></app-pokemon-card>
+  <app-pokedex-footer></app-pokedex-footer>
+</ion-content>

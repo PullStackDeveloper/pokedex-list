@@ -1,0 +1,7 @@
+{
+  "name": "poplin-pokedex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

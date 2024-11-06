@@ -1,0 +1,11 @@
+.footer-title {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+ion-footer {
+  ion-toolbar {
+    --background: #3880ff; /* Custom primary color */
+    color: white;
+  }
+}
