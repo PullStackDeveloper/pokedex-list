@@ -1,4 +1,4 @@
-# Pokémon Pokedex List Project
+# Pokémon Pokedex List Project - Angular / ionic
 
 This project is a comprehensive Pokémon Pokedex application built using Ionic, Angular, and NgRx for state management. The project is structured with modularity, scalability, and code readability in mind, drawing inspiration from applications like Spotify and iFood to ensure a seamless user experience. The code structure emphasizes best practices in state management, modular architecture, and clean coding patterns.
 
